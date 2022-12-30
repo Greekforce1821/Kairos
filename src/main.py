@@ -5,10 +5,14 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from geopy.geocoders import Nominatim
 from timezonefinder import TimezoneFinder
-from datetime import *
 import requests
 import pytz
 from PIL import Image, ImageTk
+from datetime import datetime
+from datetime import timezone
+import pytz.reference
+
+
 
 # Important Information About The GUI
 
@@ -17,6 +21,25 @@ root.title("Kairos Weather App")
 root.geometry("890x470+300+300")
 root.configure(bg="#57adff")
 root.resizable(False, False)
+
+# def getWeather Fetches All The Valuable Information That Are Going To Be Used In The Kairos Program
+
+def getWeather():
+    city=textfield.get()
+
+    geolocator= Nominatim(user_agent="geoapiExercises")
+    location= geolocator.geocode(city)
+    obj= TimezoneFinder()
+
+    result= obj.timezone_at(lng=location.longitude, lat=location.latitude)
+
+    timezn.config(text=result)
+    long_lat.config(text=f"{round(location.latitude, 4)}°N{round(location.longitude, 4)}°E")
+
+    home=pytz.timezone(result)
+    lc_time=datetime.now(home)
+    current_time=lc_time.strftime("%I:%M %p")
+    clock.config(text=current_time)
 
 # Images For The GUI
 
@@ -64,7 +87,7 @@ textfield.focus()
 # Including A Magnifier As A Photo Of The Search Box
 
 Search_icon=PhotoImage(file="images/search-icon.png")
-image_icon=Button(image=Search_icon, borderwidth=0, cursor="hand2", bg="#203243")
+image_icon=Button(image=Search_icon, borderwidth=0, cursor="hand2", bg="#203243", command=getWeather)
 image_icon.place(x=645, y=125)
 
 
@@ -92,9 +115,20 @@ Label(footer_frame, image=footer_box_six, bg="#212120").place(x=700, y=20)
 Label(footer_frame, image=footer_box_seven, bg="#212120").place(x=800, y=20)
 
 
+# Adding A Clock At The Top-Left Of The GUI
 
+clock=Label(root, font=("Helvetica", 30, 'bold'), fg="white", bg="#57adff")
+clock.place(x=30, y=20)
 
+# Adding The Correct Timezone
 
+timezn=Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
+timezn.place(x=700, y=20)
+
+# Latitude
+
+long_lat=Label(root, font=("Helvetica",20), fg="white", bg="#57adff")
+long_lat.place(x=700, y=50)
 
 
 
