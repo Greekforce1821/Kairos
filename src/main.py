@@ -37,9 +37,27 @@ def getWeather():
     long_lat.config(text=f"{round(location.latitude, 4)}°N{round(location.longitude, 4)}°E")
 
     home=pytz.timezone(result)
-    lc_time=datetime.now(home)
-    current_time=lc_time.strftime("%I:%M %p")
+    local_time=datetime.now(home)
+    current_time=local_time.strftime("%I:%M %p")
     clock.config(text=current_time)
+
+    # Here, By Using The API Key Which I Obtained From The OpenWeather Forecast Site, I Can Fetch Forecast From All Over The World
+
+    api="https://api.openweathermap.org/data/2.5/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=2cfed8cdd29d8e50088139f8cce8080e"
+    json_data = requests.get(api).json()
+
+    # Here, The Program Will Calculate And Represent The Current Temp, The Current Humidity, The Pressure, The WInd And Lastly The Description
+
+    temp = json_data['current']['temp']
+    humidity = json_data['current']['humidity']
+    pressure = json_data['current']['pressure']
+    wind = json_data['current']['wind_speed']
+    description = json_data['current']['weather'][0]['description']
+    print(temp)
+    print(humidity)
+    print(pressure)
+    print(wind)
+    print(description)
 
 # Images For The GUI
 
