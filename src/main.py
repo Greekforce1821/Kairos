@@ -11,6 +11,7 @@ from PIL import Image, ImageTk
 from datetime import datetime
 from datetime import timezone
 import pytz.reference
+from datetime import timedelta
 
 
 # ---------------------------------------------
@@ -104,7 +105,18 @@ def getWeather():
 
     # Filling Out The Empty Footer Boxes At The Bottom Of The Footer
 
+    # Boxes
 
+    # Days
+
+    first = datetime.now()
+    first_day.config(text=first.strftime("%A"))
+    
+    second = first+timedelta(days=1)
+    second_day.config(text=second.strftime("%A"))
+
+
+    
 # ----------------------------------------------------
 
 # Images For The GUI
@@ -236,31 +248,43 @@ frame_one=Frame(root, width=230, height=132, bg="#282829")
 frame_one.place(x=35, y=315)
 
 first_day=Label(frame_one, font="arial 20", bg="#282829", fg="#fff")
+first_day.place(x=100, y=5)
 
 frame_two=Frame(root, width=70, height=115, bg="#282829")
 frame_two.place(x=305, y=325)
 
+second_day=Label(frame_two, bg="#282829", fg="#fff")
+second_day.place(x=10, y=5)
 
 frame_three=Frame(root, width=70, height=115, bg="#282829")
 frame_three.place(x=405, y=325)
 
+third_day=Label(frame_three, bg="#282829", fg="#fff")
+third_day.place(x=10, y=5)
 
 frame_four=Frame(root, width=70, height=115, bg="#282829")
 frame_four.place(x=505, y=325)
 
+fourth_day=Label(frame_four, bg="#282829", fg="#fff")
+fourth_day.place(x=10, y=5)
 
 frame_five=Frame(root, width=70, height=115, bg="#282829" )
 frame_five.place(x=605, y=325)
 
+fifth_day=Label(frame_five, bg="#282829", fg="#fff")
+fifth_day.place(x=10, y=5)
 
 frame_six=Frame(root, width=70, height=115, bg="#282829")
 frame_six.place(x=705, y=325)
 
+sixth_day=Label(frame_six, bg="#282829", fg="#fff")
+sixth_day.place(x=10, y=5)
 
 frame_seven=Frame(root, width=70, height=115, bg="#282829")
 frame_seven.place(x=805, y=325)
 
-
+seventh_day=Label(frame_seven, bg="#282829", fg="#fff")
+seventh_day.place(x=10, y=5)
 
 # -------------------------------------------------------------
 
