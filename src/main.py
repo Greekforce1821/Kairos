@@ -25,6 +25,44 @@ root.resizable(False, False)
 
 # ----------------------------------------------
 
+# Added The License File As A Drop-Down Menu
+def License(): 
+    Line_window = Toplevel(root)
+    Line_window.title("License")
+    Label(Line_window,text ="""MIT License
+
+Copyright (c) 2022 Spyros Kokotos
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.""").pack()
+
+# -----------------------------------------------
+
+# Adding The Drop-Down Bar At The Top Of The GUI
+
+menubar = Menu(root)
+root.config(menu=menubar)
+about = Menu(menubar)
+menubar.add_cascade(label='Options', menu = about)
+about.add_command(label="View Licenses", command = License)
+
+# -----------------------------------------------
+
 # def getWeather Fetches All The Valuable Information That Are Going To Be Used In The Kairos Program
 
 def getWeather():
