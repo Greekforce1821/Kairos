@@ -102,6 +102,9 @@ def getWeather():
     w.config(text=(wind, "m/s"))
     d.config(text=description)
 
+    # Filling Out The Empty Footer Boxes At The Bottom Of The Footer
+
+
 # ----------------------------------------------------
 
 # Images For The GUI
@@ -229,14 +232,37 @@ d.place(x=150, y=200)
 
 # Filling Out The Empty Footer Boxes At The Bottom Of The Footer
 
-frame_one=Frame(root, width=230, height=132, bg="white")
+frame_one=Frame(root, width=230, height=132, bg="#282829")
 frame_one.place(x=35, y=315)
-frame_two=Frame(root, width=70, height=115, bg="white")
+
+first_day=Label(frame_one, font="arial 20", bg="#282829", fg="#fff")
+
+frame_two=Frame(root, width=70, height=115, bg="#282829")
 frame_two.place(x=305, y=325)
-frame_three=Frame(root, width=70, height=115, bg="white")
+
+
+frame_three=Frame(root, width=70, height=115, bg="#282829")
 frame_three.place(x=405, y=325)
 
 
+frame_four=Frame(root, width=70, height=115, bg="#282829")
+frame_four.place(x=505, y=325)
+
+
+frame_five=Frame(root, width=70, height=115, bg="#282829" )
+frame_five.place(x=605, y=325)
+
+
+frame_six=Frame(root, width=70, height=115, bg="#282829")
+frame_six.place(x=705, y=325)
+
+
+frame_seven=Frame(root, width=70, height=115, bg="#282829")
+frame_seven.place(x=805, y=325)
+
+
+
+# -------------------------------------------------------------
 
 
 
