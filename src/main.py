@@ -13,6 +13,7 @@ from datetime import timezone
 import pytz.reference
 
 
+# ---------------------------------------------
 
 # Important Information About The GUI
 
@@ -21,6 +22,8 @@ root.title("Kairos Weather App")
 root.geometry("890x470+300+300")
 root.configure(bg="#57adff")
 root.resizable(False, False)
+
+# ----------------------------------------------
 
 # def getWeather Fetches All The Valuable Information That Are Going To Be Used In The Kairos Program
 
@@ -53,21 +56,29 @@ def getWeather():
     pressure = json_data['current']['pressure']
     wind = json_data['current']['wind_speed']
     description = json_data['current']['weather'][0]['description']
-    print(temp)
-    print(humidity)
-    print(pressure)
-    print(wind)
-    print(description)
+    
+    # Added The Text Output Inside The Box On The Left Side Of The GUI
+    t.config(text=(temp,"°C"))
+    h.config(text=(humidity, "%"))
+    p.config(text=(pressure, "hPa"))
+    w.config(text=(wind, "m/s"))
+    d.config(text=description)
+
+# ----------------------------------------------------
 
 # Images For The GUI
 
 image_icon=PhotoImage(file="images/logo.png")
 root.iconphoto(False, image_icon)
 
+# -----------------------------------------------------
+
 # Assets For The GUI
 
 Round_box=PhotoImage(file="images/rr1.png")
 Label(root, image= Round_box, bg="#57adff").place(x=30, y=110)
+
+# -----------------------------------------------------
 
 # Added Labels For Each Temperature
 
@@ -86,6 +97,7 @@ label_four.place(x=50, y=180)
 label_fifth=Label(root, text="Description", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_fifth.place(x=50, y=200)
 
+# -------------------------------------------------------
 
 # Including A Search Box For The Cities
 
@@ -96,11 +108,15 @@ cloud_image=PhotoImage(file="images/clouds.png")
 weather_image=Label(root, image=cloud_image, bg="#203243")
 weather_image.place(x=290, y=127)
 
+# --------------------------------------------------------
+
 # Including Text Input For The Search Box
 
 textfield=tk.Entry(root, justify='center', width=15, font=('poppins', 25, 'bold'), bg="#203243", border=0, fg="white")
 textfield.place(x=370, y=130)
 textfield.focus()
+
+# ---------------------------------------------------------
 
 # Including A Magnifier As A Photo Of The Search Box
 
@@ -108,6 +124,7 @@ Search_icon=PhotoImage(file="images/search-icon.png")
 image_icon=Button(image=Search_icon, borderwidth=0, cursor="hand2", bg="#203243", command=getWeather)
 image_icon.place(x=645, y=125)
 
+# ---------------------------------------------------------
 
 # Adding Support For Footer Boxes That They Will Be Used For Representing Data From The Forecast
 
@@ -122,6 +139,8 @@ footer_box_five=PhotoImage(file="images/rr2c.png")
 footer_box_six=PhotoImage(file="images/rr2c.png")
 footer_box_seven=PhotoImage(file="images/rr2c.png")
 
+# ----------------------------------------------------------
+
 # Each Footer Represents A Label At The Bottom Of The GUI
 
 Label(footer_frame, image=footer_box_one, bg="#212120").place(x=30, y=20)
@@ -132,26 +151,43 @@ Label(footer_frame, image=footer_box_five, bg="#212120").place(x=600, y=20)
 Label(footer_frame, image=footer_box_six, bg="#212120").place(x=700, y=20)
 Label(footer_frame, image=footer_box_seven, bg="#212120").place(x=800, y=20)
 
+# -----------------------------------------------------------
 
 # Adding A Clock At The Top-Left Of The GUI
 
 clock=Label(root, font=("Helvetica", 30, 'bold'), fg="white", bg="#57adff")
 clock.place(x=30, y=20)
 
+# -----------------------------------------------------------
+
 # Adding The Correct Timezone
 
 timezn=Label(root, font=("Helvetica", 20), fg="white", bg="#57adff")
 timezn.place(x=700, y=20)
 
-# Latitude
+# -----------------------------------------------------------
+
+# Specifying The Latitude And The Longtitude
 
 long_lat=Label(root, font=("Helvetica",20), fg="white", bg="#57adff")
 long_lat.place(x=700, y=50)
 
+# ------------------------------------------------------------
 
+# Creating Labels For Each Entry
 
+t=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
+t.place(x=150, y=120)
+h=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
+h.place(x=150, y=140)
+p=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
+p.place(x=150, y=160)
+w=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
+w.place(x=150, y=180)
+d=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
+d.place(x=150, y=200)
 
-
+# -------------------------------------------------------------
 
 
 
