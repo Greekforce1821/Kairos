@@ -12,7 +12,7 @@ from datetime import datetime
 from datetime import timezone
 import pytz.reference
 from datetime import timedelta
-
+from PIL import Image
 
 # ---------------------------------------------
 
@@ -97,6 +97,7 @@ def getWeather():
     description = json_data['current']['weather'][0]['description']
     
     # Added The Text Output Inside The Box On The Left Side Of The GUI
+
     t.config(text=(temp,"°C"))
     h.config(text=(humidity, "%"))
     p.config(text=(pressure, "hPa"))
@@ -106,6 +107,60 @@ def getWeather():
     # Filling Out The Empty Footer Boxes At The Bottom Of The Footer
 
     # Boxes
+
+    first_image = json_data['daily'][0]['weather'][0]['icon']
+    
+    photo_1 = ImageTk.PhotoImage(file=f"icons/{first_image}@2x.png")
+    image_one.config(image= photo_1)
+    image_one.image=photo_1
+
+    second_image = json_data['daily'][1]['weather'][0]['icon']
+
+    img = (Image.open(f"icons/{second_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_2 = ImageTk.PhotoImage(resized_img)
+    image_two.config(image=photo_2)
+    image_two.image=photo_2
+    
+    third_image = json_data['daily'][2]['weather'][0]['icon']
+
+    img = (Image.open(f"icons/{third_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_3 = ImageTk.PhotoImage(resized_img)
+    image_three.config(image=photo_3)
+    image_three.image=photo_3
+    
+    fourth_image = json_data['daily'][3]['weather'][0]['icon']
+
+    img = (Image.open(f"icons/{fourth_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_4 = ImageTk.PhotoImage(resized_img)
+    image_four.config(image=photo_4)
+    image_four.image=photo_4
+    
+    fifth_image = json_data['daily'][4]['weather'][0]['icon']
+
+    img = (Image.open(f"icons/{fifth_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_5 = ImageTk.PhotoImage(resized_img)
+    image_five.config(image=photo_5)
+    image_five.image=photo_5
+    
+    sixth_image = json_data['daily'][5]['weather'][0]['icon']
+
+    img = (Image.open(f"icons/{sixth_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_6 = ImageTk.PhotoImage(resized_img)
+    image_six.config(image=photo_6)
+    image_six.image=photo_6
+    
+    seventh_image = json_data['daily'][6]['weather'][0]['icon']
+    
+    img = (Image.open(f"icons/{seventh_image}@2x.png"))
+    resized_img = img.resize((50, 50))
+    photo_7 = ImageTk.PhotoImage(resized_img)
+    image_seven.config(image=photo_7)
+    image_seven.image=photo_7
 
     # Days
 
