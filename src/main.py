@@ -322,6 +322,9 @@ first_day.place(x=100, y=5)
 image_one=Label(frame_one, bg="#282929")
 image_one.place(x=1, y=15)
 
+temp_1 = Label(frame_one, bg="#282929", fg= "#57adff", font="arial 15 bold")
+temp_1.place(x=100, y=50)
+
 frame_two=Frame(root, width=70, height=115, bg="#282829")
 frame_two.place(x=305, y=325)
 
@@ -330,6 +333,9 @@ second_day.place(x=10, y=5)
 
 image_two=Label(frame_two, bg="#282929")
 image_two.place(x=7, y=20)
+
+temp_2 = Label(frame_two, bg="#282929", fg= "#57adff")
+temp_2.place(x=10, y=80)
 
 frame_three=Frame(root, width=70, height=115, bg="#282829")
 frame_three.place(x=405, y=325)
@@ -340,6 +346,9 @@ third_day.place(x=10, y=5)
 image_three=Label(frame_three, bg="#282929")
 image_three.place(x=7, y=20)
 
+temp_3 = Label(frame_three, bg="#282929", fg= "#57adff")
+temp_3.place(x=10, y=80)
+
 frame_four=Frame(root, width=70, height=115, bg="#282829")
 frame_four.place(x=505, y=325)
 
@@ -348,6 +357,9 @@ fourth_day.place(x=10, y=5)
 
 image_four=Label(frame_four, bg="#282929")
 image_four.place(x=7, y=20)
+
+temp_4 = Label(frame_four, bg="#282929", fg= "#57adff")
+temp_4.place(x=10, y=80)
 
 frame_five=Frame(root, width=70, height=115, bg="#282829" )
 frame_five.place(x=605, y=325)
@@ -358,6 +370,9 @@ fifth_day.place(x=10, y=5)
 image_five=Label(frame_five, bg="#282929")
 image_five.place(x=7, y=20)
 
+temp_5 = Label(frame_five, bg="#282929", fg= "#57adff")
+temp_5.place(x=10, y=80)
+
 frame_six=Frame(root, width=70, height=115, bg="#282829")
 frame_six.place(x=705, y=325)
 
@@ -367,6 +382,9 @@ sixth_day.place(x=10, y=5)
 image_six=Label(frame_six, bg="#282929")
 image_six.place(x=7, y=20)
 
+temp_6 = Label(frame_six, bg="#282929", fg= "#57adff")
+temp_6.place(x=10, y=80)
+
 frame_seven=Frame(root, width=70, height=115, bg="#282829")
 frame_seven.place(x=805, y=325)
 
@@ -375,6 +393,9 @@ seventh_day.place(x=10, y=5)
 
 image_seven=Label(frame_seven, bg="#282929")
 image_seven.place(x=7, y=20)
+
+temp_7 = Label(frame_seven, bg="#282929", fg= "#57adff")
+temp_7.place(x=10, y=80)
 
 # -------------------------------------------------------------
 
