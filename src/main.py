@@ -84,7 +84,7 @@ def getWeather():
 
     # Here, By Using The API Key Which I Obtained From The OpenWeather Forecast Site, I Can Fetch Forecast From All Over The World
 
-    api="https://api.openweathermap.org/data/2.5/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=2cfed8cdd29d8e50088139f8cce8080e"
+    api="https://api.openweathermap.org/data/2.5/onecall?lat="+str(location.latitude)+"&lon="+str(location.longitude)+"&units=metric&exclude=hourly&appid=44b3c759b0e2410bb01551966ea026bd"
     json_data = requests.get(api).json()
 
     # Here, The Program Will Calculate And Represent The Current Temp, The Current Humidity, The Pressure, The WInd And Lastly The Description
@@ -227,7 +227,14 @@ d.place(x=150, y=200)
 
 # -------------------------------------------------------------
 
+# Filling Out The Empty Footer Boxes At The Bottom Of The Footer
 
+frame_one=Frame(root, width=230, height=132, bg="white")
+frame_one.place(x=35, y=315)
+frame_two=Frame(root, width=70, height=115, bg="white")
+frame_two.place(x=305, y=325)
+frame_three=Frame(root, width=70, height=115, bg="white")
+frame_three.place(x=405, y=325)
 
 
 
