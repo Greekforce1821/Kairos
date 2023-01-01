@@ -20,7 +20,7 @@ from PIL import Image
 
 root=Tk()
 root.title("Kairos Weather App")
-root.geometry("890x470+300+300")
+root.geometry("890x470+300+200")
 root.configure(bg="#57adff")
 root.resizable(False, False)
 
@@ -114,6 +114,11 @@ def getWeather():
     image_one.config(image= photo_1)
     image_one.image=photo_1
 
+    day_temp1 = json_data['daily'][0]['temp']['day']
+    night_temp1 = json_data['daily'][0]['temp']['night']
+
+    day1temp.config(text=f"Day:{day_temp1}\n Night:{night_temp1}")
+
     second_image = json_data['daily'][1]['weather'][0]['icon']
 
     img = (Image.open(f"icons/{second_image}@2x.png"))
@@ -122,6 +127,11 @@ def getWeather():
     image_two.config(image=photo_2)
     image_two.image=photo_2
     
+    day_temp2 = json_data['daily'][1]['temp']['day']
+    night_temp2 = json_data['daily'][1]['temp']['night']
+
+    day2temp.config(text=f"Day:{day_temp2}\n Night:{night_temp2}")
+
     third_image = json_data['daily'][2]['weather'][0]['icon']
 
     img = (Image.open(f"icons/{third_image}@2x.png"))
@@ -129,6 +139,11 @@ def getWeather():
     photo_3 = ImageTk.PhotoImage(resized_img)
     image_three.config(image=photo_3)
     image_three.image=photo_3
+
+    day_temp3 = json_data['daily'][2]['temp']['day']
+    night_temp3 = json_data['daily'][2]['temp']['night']
+
+    day3temp.config(text=f"Day:{day_temp3}\n Night:{night_temp3}")
     
     fourth_image = json_data['daily'][3]['weather'][0]['icon']
 
@@ -138,6 +153,11 @@ def getWeather():
     image_four.config(image=photo_4)
     image_four.image=photo_4
     
+    day_temp4 = json_data['daily'][3]['temp']['day']
+    night_temp4 = json_data['daily'][3]['temp']['night']
+
+    day4temp.config(text=f"Day:{day_temp4}\n Night:{night_temp4}")
+
     fifth_image = json_data['daily'][4]['weather'][0]['icon']
 
     img = (Image.open(f"icons/{fifth_image}@2x.png"))
@@ -146,10 +166,10 @@ def getWeather():
     image_five.config(image=photo_5)
     image_five.image=photo_5
 
-    day_temp1 = json_data['daily'][0]['temp']['day']
-    night_temp1 = json_data['daily'][0]['temp']['night']
+    day_temp5 = json_data['daily'][4]['temp']['day']
+    night_temp5 = json_data['daily'][4]['temp']['night']
 
-    day1temp.config(text=f"Day:{day_temp1}\n Night:{night_temp1}")
+    day5temp.config(text=f"Day:{day_temp5}\n Night:{night_temp5}")
     
     sixth_image = json_data['daily'][5]['weather'][0]['icon']
 
@@ -158,6 +178,11 @@ def getWeather():
     photo_6 = ImageTk.PhotoImage(resized_img)
     image_six.config(image=photo_6)
     image_six.image=photo_6
+
+    day_temp6 = json_data['daily'][5]['temp']['day']
+    night_temp6 = json_data['daily'][5]['temp']['night']
+
+    day6temp.config(text=f"Day:{day_temp6}\n Night:{night_temp6}")
     
     seventh_image = json_data['daily'][6]['weather'][0]['icon']
     
@@ -166,6 +191,11 @@ def getWeather():
     photo_7 = ImageTk.PhotoImage(resized_img)
     image_seven.config(image=photo_7)
     image_seven.image=photo_7
+
+    day_temp7 = json_data['daily'][6]['temp']['day']
+    night_temp7 = json_data['daily'][6]['temp']['night']
+
+    day7temp.config(text=f"Day:{day_temp7}\n Night:{night_temp7}")
 
     # Days
 
@@ -271,12 +301,12 @@ footer_box_seven=PhotoImage(file="images/rr2c.png")
 # Each Footer Represents A Label At The Bottom Of The GUI
 
 Label(footer_frame, image=footer_box_one, bg="#212120").place(x=30, y=20)
-Label(footer_frame, image=footer_box_two, bg="#212120").place(x=300, y=20)
-Label(footer_frame, image=footer_box_three, bg="#212120").place(x=400, y=20)
-Label(footer_frame, image=footer_box_four, bg="#212120").place(x=500, y=20)
-Label(footer_frame, image=footer_box_five, bg="#212120").place(x=600, y=20)
-Label(footer_frame, image=footer_box_six, bg="#212120").place(x=700, y=20)
-Label(footer_frame, image=footer_box_seven, bg="#212120").place(x=800, y=20)
+Label(footer_frame, image=footer_box_two, bg="#212120").place(x=300, y=30)
+Label(footer_frame, image=footer_box_three, bg="#212120").place(x=400, y=30)
+Label(footer_frame, image=footer_box_four, bg="#212120").place(x=500, y=30)
+Label(footer_frame, image=footer_box_five, bg="#212120").place(x=600, y=30)
+Label(footer_frame, image=footer_box_six, bg="#212120").place(x=700, y=30)
+Label(footer_frame, image=footer_box_seven, bg="#212120").place(x=800, y=30)
 
 # -----------------------------------------------------------
 
@@ -340,7 +370,7 @@ image_two=Label(frame_two, bg="#282929")
 image_two.place(x=7, y=20)
 
 day2temp = Label(frame_two, bg="#282929", fg= "#57adff")
-day2temp.place(x=10, y=80)
+day2temp.place(x=2, y=70)
 
 frame_three=Frame(root, width=70, height=115, bg="#282829")
 frame_three.place(x=405, y=325)
@@ -352,7 +382,7 @@ image_three=Label(frame_three, bg="#282929")
 image_three.place(x=7, y=20)
 
 day3temp = Label(frame_three, bg="#282929", fg= "#57adff")
-day3temp.place(x=10, y=80)
+day3temp.place(x=2, y=70)
 
 frame_four=Frame(root, width=70, height=115, bg="#282829")
 frame_four.place(x=505, y=325)
@@ -364,7 +394,7 @@ image_four=Label(frame_four, bg="#282929")
 image_four.place(x=7, y=20)
 
 day4temp = Label(frame_four, bg="#282929", fg= "#57adff")
-day4temp.place(x=10, y=80)
+day4temp.place(x=2, y=70)
 
 frame_five=Frame(root, width=70, height=115, bg="#282829" )
 frame_five.place(x=605, y=325)
@@ -376,7 +406,7 @@ image_five=Label(frame_five, bg="#282929")
 image_five.place(x=7, y=20)
 
 day5temp = Label(frame_five, bg="#282929", fg= "#57adff")
-day5temp.place(x=10, y=80)
+day5temp.place(x=2, y=70)
 
 frame_six=Frame(root, width=70, height=115, bg="#282829")
 frame_six.place(x=705, y=325)
@@ -388,7 +418,7 @@ image_six=Label(frame_six, bg="#282929")
 image_six.place(x=7, y=20)
 
 day6temp = Label(frame_six, bg="#282929", fg= "#57adff")
-day6temp.place(x=10, y=80)
+day6temp.place(x=2, y=70)
 
 frame_seven=Frame(root, width=70, height=115, bg="#282829")
 frame_seven.place(x=805, y=325)
@@ -400,18 +430,8 @@ image_seven=Label(frame_seven, bg="#282929")
 image_seven.place(x=7, y=20)
 
 day7temp = Label(frame_seven, bg="#282929", fg= "#57adff")
-day7temp.place(x=10, y=80)
+day7temp.place(x=2, y=70)
 
 # -------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
 
 root.mainloop()
