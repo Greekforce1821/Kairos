@@ -145,6 +145,11 @@ def getWeather():
     photo_5 = ImageTk.PhotoImage(resized_img)
     image_five.config(image=photo_5)
     image_five.image=photo_5
+
+    day_temp1 = json_data['daily'][0]['temp']['day']
+    night_temp1 = json_data['daily'][0]['temp']['night']
+
+    day1temp.config(text=f"Day:{day_temp1}\n Night:{night_temp1}")
     
     sixth_image = json_data['daily'][5]['weather'][0]['icon']
 
@@ -165,25 +170,25 @@ def getWeather():
     # Days
 
     first = datetime.now()
-    first_day.config(text=first.strftime("%A"))
+    day1.config(text=first.strftime("%A"))
     
     second = first+timedelta(days=1)
-    second_day.config(text=second.strftime("%A"))
+    day2.config(text=second.strftime("%A"))
     
     third = first+timedelta(days=2)
-    third_day.config(text=third.strftime("%A"))
+    day3.config(text=third.strftime("%A"))
 
     fourth = first+timedelta(days=3)
-    fourth_day.config(text=fourth.strftime("%A"))
+    day4.config(text=fourth.strftime("%A"))
 
     fifth = first+timedelta(days=4)
-    fifth_day.config(text=fifth.strftime("%A"))
+    day5.config(text=fifth.strftime("%A"))
 
     sixth = first+timedelta(days=5)
-    sixth_day.config(text=sixth.strftime("%A"))
+    day6.config(text=sixth.strftime("%A"))
 
     seventh = first+timedelta(days=6)
-    seventh_day.config(text=seventh.strftime("%A"))
+    day7.config(text=seventh.strftime("%A"))
 
     
 # ----------------------------------------------------
@@ -316,86 +321,86 @@ d.place(x=150, y=200)
 frame_one=Frame(root, width=230, height=132, bg="#282829")
 frame_one.place(x=35, y=315)
 
-first_day=Label(frame_one, font="arial 20", bg="#282829", fg="#fff")
-first_day.place(x=100, y=5)
+day1=Label(frame_one, font="arial 20", bg="#282829", fg="#fff")
+day1.place(x=100, y=5)
 
 image_one=Label(frame_one, bg="#282929")
 image_one.place(x=1, y=15)
 
-temp_1 = Label(frame_one, bg="#282929", fg= "#57adff", font="arial 15 bold")
-temp_1.place(x=100, y=50)
+day1temp = Label(frame_one, bg="#282929", fg= "#57adff", font="arial 15 bold")
+day1temp.place(x=100, y=50)
 
 frame_two=Frame(root, width=70, height=115, bg="#282829")
 frame_two.place(x=305, y=325)
 
-second_day=Label(frame_two, bg="#282829", fg="#fff")
-second_day.place(x=10, y=5)
+day2=Label(frame_two, bg="#282829", fg="#fff")
+day2.place(x=10, y=5)
 
 image_two=Label(frame_two, bg="#282929")
 image_two.place(x=7, y=20)
 
-temp_2 = Label(frame_two, bg="#282929", fg= "#57adff")
-temp_2.place(x=10, y=80)
+day2temp = Label(frame_two, bg="#282929", fg= "#57adff")
+day2temp.place(x=10, y=80)
 
 frame_three=Frame(root, width=70, height=115, bg="#282829")
 frame_three.place(x=405, y=325)
 
-third_day=Label(frame_three, bg="#282829", fg="#fff")
-third_day.place(x=10, y=5)
+day3=Label(frame_three, bg="#282829", fg="#fff")
+day3.place(x=10, y=5)
 
 image_three=Label(frame_three, bg="#282929")
 image_three.place(x=7, y=20)
 
-temp_3 = Label(frame_three, bg="#282929", fg= "#57adff")
-temp_3.place(x=10, y=80)
+day3temp = Label(frame_three, bg="#282929", fg= "#57adff")
+day3temp.place(x=10, y=80)
 
 frame_four=Frame(root, width=70, height=115, bg="#282829")
 frame_four.place(x=505, y=325)
 
-fourth_day=Label(frame_four, bg="#282829", fg="#fff")
-fourth_day.place(x=10, y=5)
+day4=Label(frame_four, bg="#282829", fg="#fff")
+day4.place(x=10, y=5)
 
 image_four=Label(frame_four, bg="#282929")
 image_four.place(x=7, y=20)
 
-temp_4 = Label(frame_four, bg="#282929", fg= "#57adff")
-temp_4.place(x=10, y=80)
+day4temp = Label(frame_four, bg="#282929", fg= "#57adff")
+day4temp.place(x=10, y=80)
 
 frame_five=Frame(root, width=70, height=115, bg="#282829" )
 frame_five.place(x=605, y=325)
 
-fifth_day=Label(frame_five, bg="#282829", fg="#fff")
-fifth_day.place(x=10, y=5)
+day5=Label(frame_five, bg="#282829", fg="#fff")
+day5.place(x=10, y=5)
 
 image_five=Label(frame_five, bg="#282929")
 image_five.place(x=7, y=20)
 
-temp_5 = Label(frame_five, bg="#282929", fg= "#57adff")
-temp_5.place(x=10, y=80)
+day5temp = Label(frame_five, bg="#282929", fg= "#57adff")
+day5temp.place(x=10, y=80)
 
 frame_six=Frame(root, width=70, height=115, bg="#282829")
 frame_six.place(x=705, y=325)
 
-sixth_day=Label(frame_six, bg="#282829", fg="#fff")
-sixth_day.place(x=10, y=5)
+day6=Label(frame_six, bg="#282829", fg="#fff")
+day6.place(x=10, y=5)
 
 image_six=Label(frame_six, bg="#282929")
 image_six.place(x=7, y=20)
 
-temp_6 = Label(frame_six, bg="#282929", fg= "#57adff")
-temp_6.place(x=10, y=80)
+day6temp = Label(frame_six, bg="#282929", fg= "#57adff")
+day6temp.place(x=10, y=80)
 
 frame_seven=Frame(root, width=70, height=115, bg="#282829")
 frame_seven.place(x=805, y=325)
 
-seventh_day=Label(frame_seven, bg="#282829", fg="#fff")
-seventh_day.place(x=10, y=5)
+day7=Label(frame_seven, bg="#282829", fg="#fff")
+day7.place(x=10, y=5)
 
 image_seven=Label(frame_seven, bg="#282929")
 image_seven.place(x=7, y=20)
 
-temp_7 = Label(frame_seven, bg="#282929", fg= "#57adff")
-temp_7.place(x=10, y=80)
+day7temp = Label(frame_seven, bg="#282929", fg= "#57adff")
+day7temp.place(x=10, y=80)
 
 # -------------------------------------------------------------
 
