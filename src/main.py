@@ -239,19 +239,19 @@ Label(root, image= Round_box, bg="#57adff").place(x=30, y=110)
 
 # Added Labels For Each Temperature
 
-label_one=Label(root, text="Temperature", font= ('Helvetica', 11), fg="white", bg="#203243")
+label_one=Label(root, text="Temperature: ", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_one.place(x=50, y=120)
 
-label_two=Label(root, text="Humidity", font= ('Helvetica', 11), fg="white", bg="#203243")
+label_two=Label(root, text="Humidity: ", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_two.place(x=50, y=140)
 
-label_three=Label(root, text="Pressure", font= ('Helvetica', 11), fg="white", bg="#203243")
+label_three=Label(root, text="Pressure: ", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_three.place(x=50, y=160)
 
-label_four=Label(root, text="Wind Speed", font= ('Helvetica', 11), fg="white", bg="#203243")
+label_four=Label(root, text="Wind Speed: ", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_four.place(x=50, y=180)
 
-label_fifth=Label(root, text="Description", font= ('Helvetica', 11), fg="white", bg="#203243")
+label_fifth=Label(root, text="Description: ", font= ('Helvetica', 11), fg="white", bg="#203243")
 label_fifth.place(x=50, y=200)
 
 # -------------------------------------------------------
