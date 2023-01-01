@@ -20,7 +20,7 @@ from PIL import Image
 
 root=Tk()
 root.title("Kairos Weather App")
-root.geometry("890x470+300+200")
+root.geometry("900x470+300+200")
 root.configure(bg="#57adff")
 root.resizable(False, False)
 
@@ -76,7 +76,7 @@ def getWeather():
     result= obj.timezone_at(lng=location.longitude, lat=location.latitude)
 
     timezn.config(text=result)
-    long_lat.config(text=f"{round(location.latitude, 4)}°N{round(location.longitude, 4)}°E")
+    long_lat.config(text=f"{round(location.latitude,4)}°N,{round(location.longitude, 4)}°E")
 
     home=pytz.timezone(result)
     local_time=datetime.now(home)
@@ -130,7 +130,7 @@ def getWeather():
     day_temp2 = json_data['daily'][1]['temp']['day']
     night_temp2 = json_data['daily'][1]['temp']['night']
 
-    day2temp.config(text=f"Day:{day_temp2}\n Night:{night_temp2}")
+    day2temp.config(text=f"Day: {day_temp2}\n Night: {night_temp2}")
 
     third_image = json_data['daily'][2]['weather'][0]['icon']
 
@@ -143,7 +143,7 @@ def getWeather():
     day_temp3 = json_data['daily'][2]['temp']['day']
     night_temp3 = json_data['daily'][2]['temp']['night']
 
-    day3temp.config(text=f"Day:{day_temp3}\n Night:{night_temp3}")
+    day3temp.config(text=f"Day: {day_temp3}\n Night: {night_temp3}")
     
     fourth_image = json_data['daily'][3]['weather'][0]['icon']
 
@@ -156,7 +156,7 @@ def getWeather():
     day_temp4 = json_data['daily'][3]['temp']['day']
     night_temp4 = json_data['daily'][3]['temp']['night']
 
-    day4temp.config(text=f"Day:{day_temp4}\n Night:{night_temp4}")
+    day4temp.config(text=f"Day: {day_temp4}\n Night: {night_temp4}")
 
     fifth_image = json_data['daily'][4]['weather'][0]['icon']
 
@@ -169,7 +169,7 @@ def getWeather():
     day_temp5 = json_data['daily'][4]['temp']['day']
     night_temp5 = json_data['daily'][4]['temp']['night']
 
-    day5temp.config(text=f"Day:{day_temp5}\n Night:{night_temp5}")
+    day5temp.config(text=f"Day: {day_temp5}\n Night: {night_temp5}")
     
     sixth_image = json_data['daily'][5]['weather'][0]['icon']
 
@@ -182,7 +182,7 @@ def getWeather():
     day_temp6 = json_data['daily'][5]['temp']['day']
     night_temp6 = json_data['daily'][5]['temp']['night']
 
-    day6temp.config(text=f"Day:{day_temp6}\n Night:{night_temp6}")
+    day6temp.config(text=f"Day: {day_temp6}\n Night: {night_temp6}")
     
     seventh_image = json_data['daily'][6]['weather'][0]['icon']
     
@@ -195,7 +195,7 @@ def getWeather():
     day_temp7 = json_data['daily'][6]['temp']['day']
     night_temp7 = json_data['daily'][6]['temp']['night']
 
-    day7temp.config(text=f"Day:{day_temp7}\n Night:{night_temp7}")
+    day7temp.config(text=f"Day: {day_temp7}\n Night: {night_temp7}")
 
     # Days
 
